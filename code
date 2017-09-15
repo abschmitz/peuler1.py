@@ -1,0 +1,20 @@
+# If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+# Find the sum of all the multiples of 3 or 5 below 1000.
+
+def divisible_by_x(n,x):
+    if n % x == 0:
+        return n
+    else:
+        return 0
+
+total = 0
+divisors = [3,5]
+max_ = 1000
+
+for i in range(1,max_):
+    for j in range(0,len(divisors)):
+        if(divisible_by_x(i,divisors[j])):
+            total += i
+            break
+
+print(total)
